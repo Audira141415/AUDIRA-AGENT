@@ -8,7 +8,7 @@ echo.
 echo ==============================================================================
 echo        🎮 AUDIRA-AGENT: CYBER GAME STUDIO - 1-CLICK GIT SAVE & PUSH
 echo ==============================================================================
-echo  Target Repo : https://github.com/Audira141415/AUDIRA-AGENT.git
+echo  Target Repo  : https://github.com/Audira141415/AUDIRA-AGENT.git
 echo  Target Branch: main
 echo ==============================================================================
 echo.
@@ -34,7 +34,7 @@ if not exist ".git" (
     )
     echo [OK] Git repository berhasil diinisialisasi.
 ) else (
-    echo [*] Git repository lokal sudah aktif.
+    echo [*] Git repository lokal terdeteksi aktif.
 )
 
 :: 3. Pastikan branch bernama main
@@ -50,64 +50,75 @@ if %errorlevel% neq 0 (
     git remote set-url origin https://github.com/Audira141415/AUDIRA-AGENT.git
 )
 
-:: 5. Staging semua file proyek (mengikuti .gitignore)
-echo.
-echo [*] Melakukan staging file (git add -A)...
-git add -A
+:: 5. Fetch status remote terbaru
+echo [*] Memeriksa status remote GitHub...
+git fetch origin main >nul 2>nul
 
-:: Cek status file
-git status --short
-echo.
-
-:: 6. Input pesan commit
-set "DEFAULT_MSG=feat: update AUDIRA-AGENT Cyber Game Studio & Asset Command Center (%date% %time%)"
-echo ------------------------------------------------------------------------------
-set /p COMMIT_MSG="[?] Masukkan pesan commit (Tekan Enter untuk default): "
-if "!COMMIT_MSG!"=="" (
-    set "COMMIT_MSG=%DEFAULT_MSG%"
+:: 6. Periksa perubahan file lokal
+echo [*] Memeriksa status perubahan file...
+set HAS_CHANGES=0
+for /f "tokens=*" %%i in ('git status --porcelain') do (
+    set HAS_CHANGES=1
 )
 
-:: 7. Commit perubahan
-echo.
-echo [*] Melakukan commit dengan pesan: "!COMMIT_MSG!"
-git commit -m "!COMMIT_MSG!"
+if "!HAS_CHANGES!"=="1" (
+    echo.
+    echo [*] Terdeteksi perubahan file lokal:
+    git status --short
+    echo.
+    
+    :: Staging semua file
+    echo [*] Melakukan staging file (git add -A)...
+    git add -A
 
-if %errorlevel% neq 0 (
-    echo [INFO] Tidak ada perubahan baru untuk di-commit.
+    :: Input pesan commit
+    set "DEFAULT_MSG=feat: update AUDIRA-AGENT Cyber Game Studio & Asset Command Center (%date% %time%)"
+    echo ------------------------------------------------------------------------------
+    set /p COMMIT_MSG="[?] Masukkan pesan commit (Tekan Enter untuk default): "
+    if "!COMMIT_MSG!"=="" (
+        set "COMMIT_MSG=!DEFAULT_MSG!"
+    )
+
+    :: Commit perubahan
+    echo [*] Melakukan commit: "!COMMIT_MSG!"
+    git commit -m "!COMMIT_MSG!"
+    if %errorlevel% equ 0 (
+        echo [OK] Commit berhasil dibuat.
+    )
 ) else (
-    echo [OK] Commit berhasil dibuat.
+    echo [OK] Tidak ada file baru atau file yang dimodifikasi (working tree clean).
 )
 
-:: 8. Push ke remote origin main
+:: 7. Push ke remote origin main
 echo.
-echo [*] Mengunggah (push) ke GitHub: origin/main...
+echo [*] Mengunggah dan menyinkronkan ke GitHub (origin/main)...
 git push -u origin main
 
 if %errorlevel% neq 0 (
     echo.
-    echo [!] Push pertama gagal atau remote memiliki commit berbeda.
-    echo [*] Mencoba sinkronisasi (git pull --rebase origin main)...
+    echo [!] Terjadi kendala saat push. Melakukan sinkronisasi otomatis...
+    timeout /t 2 /nobreak >nul
+    git fetch origin main >nul 2>nul
     git pull --rebase origin main
-    if %errorlevel% equ 0 (
-        echo [*] Mengulang push setelah sinkronisasi...
-        git push -u origin main
-    )
+    echo [*] Mengulang push setelah sinkronisasi...
+    git push -u origin main
 )
 
 if %errorlevel% equ 0 (
     color 0A
     echo.
     echo ==============================================================================
-    echo  [SUCCESS] KODE DAN SCREENSHOT BERHASIL DI-PUSH KE GITHUB!
-    echo  URL Repositori: https://github.com/Audira141415/AUDIRA-AGENT
+    echo  [SUCCESS] SELURUH KODE, ASET 3D, DAN SCREENSHOT SUDAH SINKRON DI GITHUB!
+    echo  Repositori: https://github.com/Audira141415/AUDIRA-AGENT
+    echo  Branch    : main (Up-to-Date)
     echo ==============================================================================
 ) else (
     color 0E
     echo.
     echo ==============================================================================
-    echo  [CATATAN] Push memerlukan autentikasi GitHub atau token akses personal (PAT).
-    echo  Pastikan Anda telah login ke akun GitHub (Audira141415).
-    echo  Atau jalankan: git push -u origin main secara manual jika ada prompt login.
+    echo  [INFO] Jika GitHub meminta login atau izin akun Audira141415,
+    echo  silakan jalankan perintah manual: git push -u origin main
+    echo  atau pastikan Personal Access Token (PAT) Anda aktif.
     echo ==============================================================================
 )
 
