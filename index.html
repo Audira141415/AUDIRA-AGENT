@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AUDIRA GAME STUDIO 3D - Virtual AI Indie Game Dev & 3D Asset Workshop Command Center" />
+    <title>AUDIRA GAME STUDIO 3D | AI Game Dev & 3D Asset Workshop</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Left Sidebar Navigation Menu (AUDIRA-DCOS Style) -->
+      <aside id="leftSidebarNav"></aside>
+
+      <!-- Main Viewport Area -->
+      <div id="mainViewport">
+        <!-- Top Breadcrumb & Live Telemetry Bar -->
+        <header id="topControlBar"></header>
+
+        <!-- 3D NOC Command Center Canvas & CSS2D Labels -->
+        <div id="office3DContainer">
+          <canvas id="office3DCanvas"></canvas>
+          <div id="office3DLabels"></div>
+        </div>
+
+        <!-- Bottom Unified Command Dock (Terminal + Prompt Dispatcher) -->
+        <div id="bottomCommandDock">
+          <div id="bottomTerminalContainer"></div>
+          <div id="bottomTaskBarContainer"></div>
+        </div>
+
+        <!-- 3D Camera Pan / Geser & Sector Navigation Gizmo HUD -->
+        <div id="cameraNavGizmoContainer"></div>
+
+        <!-- Grand 56m Catwalk Runway Controls Deck HUD -->
+        <div id="runwayControlDeckContainer"></div>
+      </div>
+
+      <!-- Right Side Agent Inspector Slide-in Drawer -->
+      <div id="rightInspectorContainer"></div>
+
+      <!-- NOC Video Wall HUD Modal Container -->
+      <div id="nocVideoWallModalContainer"></div>
+
+      <!-- Add Agent Onboarding Modal Container -->
+      <div id="addAgentModalContainer"></div>
+
+      <!-- 3D Asset & GLB Pipeline Workshop Modal Container -->
+      <div id="assetManagerModalContainer"></div>
+
+      <!-- AI Engine & LLM Multi-Tier Configuration Modal Container -->
+      <div id="aiConfigModalContainer"></div>
+    </div>
+
+    <!-- Application Entrypoint -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "audira-agent-office",
+  "version": "1.0.0",
+  "description": "Interactive Isometric Pixel Art Mini-Office Visualizer for AI Multi-Agent Systems",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "three": "^0.186.1",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

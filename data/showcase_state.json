@@ -1,0 +1,47 @@
+{
+  "conveyor": {
+    "0": {
+      "modelUrl": "/models/uploads/gundam_3d_model.glb",
+      "fileName": "gundam_3d_model.glb",
+      "title": "✦ [ SLOT 01 ] GUNDAM PRIME",
+      "sub": "[ MECHA EXPO ]",
+      "targetHeight": 3.2,
+      "shadingMode": "pbr",
+      "animSpeed": 1,
+      "timestamp": 1791073626095
+    },
+    "1": {
+      "modelUrl": "/models/uploads/gundam_3d_model_2_.glb",
+      "fileName": "gundam_3d_model_2_.glb",
+      "title": "✦ [ SLOT 02 ] GUNDAM STRIKE",
+      "sub": "[ MECHA EXPO ]",
+      "targetHeight": 3.2,
+      "shadingMode": "pbr",
+      "animSpeed": 1,
+      "timestamp": 1791073626095
+    },
+    "2": {
+      "modelUrl": "/models/uploads/mecha_robot_3d_model_Clone1.glb",
+      "fileName": "mecha_robot_3d_model_Clone1.glb",
+      "title": "✦ [ SLOT 03 ] TITAN MECHA",
+      "sub": "[ MECHA EXPO ]",
+      "targetHeight": 3,
+      "shadingMode": "pbr",
+      "animSpeed": 1,
+      "timestamp": 1791073626095
+    },
+    "3": {
+      "modelUrl": "/models/uploads/red_mech_robot_3d_model.glb",
+      "fileName": "red_mech_robot_3d_model.glb",
+      "title": "✦ [ SLOT 04 ] RED APEX MECH",
+      "sub": "[ MECHA EXPO ]",
+      "targetHeight": 3.4,
+      "shadingMode": "pbr",
+      "animSpeed": 1,
+      "timestamp": 1791073626095
+    }
+  },
+  "sectors": {},
+  "agentSkins": {},
+  "lastUpdated": 1791073626095
+}

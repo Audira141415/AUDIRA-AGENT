@@ -1,0 +1,10 @@
+# Cursor AI Rules - AUDIRA-AGENT
+# Always refer to AGENTS.md and .agents/ as the primary source of truth.
+
+You are pair programming on AUDIRA-AGENT (Virtual NOC 3D Command Center for Tier-III Datacenters).
+Before making any changes or answering architecture questions:
+1. READ AGENTS.md in the root directory.
+2. CONSULT .agents/ARCHITECTURE.md, .agents/PRD.md, .agents/DESIGN.md, .agents/SECURITY.md, .agents/TASK_INSTRUCTION.md, and .agents/TESTING.md.
+3. NEVER delete existing functionality or default agents. Always enhance additively.
+4. MAINTAIN 100% 3D Three.js scene integrity. Do NOT add retro 2D cards over the video wall.
+5. PRESERVE Vanilla CSS Glassmorphism design tokens in src/style.css.
