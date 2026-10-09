@@ -1,1 +1,50 @@
-IyBMb2dzCmxvZ3MKKi5sb2cKbnBtLWRlYnVnLmxvZyoKeWFybi1kZWJ1Zy5sb2cqCnBucG0tZGVidWcubG9nKgpsZXJuYS1kZWJ1Zy5sb2cqCgojIE5vZGUgbW9kdWxlcwpub2RlX21vZHVsZXMKZGlzdApkaXN0LXNzcgoqLmxvY2FsCgojIEVkaXRvciBkaXJlY3RvcmllcyBhbmQgZmlsZXMKLnZzY29kZS8qCiEudnNjb2RlL2V4dGVuc2lvbnMuanNvbgouaWRlYQouRFNfU3RvcmUKKi5zdW8KKi5udHZzKgoqLm5qc3Byb2oKKi5zbG4KKi5zdz8KCiMgVGVtcG9yYXJ5IGFuZCBTY3JhdGNoIERpcmVjdG9yaWVzCnNjcmF0Y2gvCi50ZW1wbWVkaWFTdG9yYWdlLwouc3lzdGVtX2dlbmVyYXRlZC8KCiMgRW52aXJvbm1lbnQgVmFyaWFibGVzCi5lbnYKLmVudi5sb2NhbAouZW52LmRldmVsb3BtZW50LmxvY2FsCi5lbnYudGVzdC5sb2NhbAouZW52LnByb2R1Y3Rpb24ubG9jYWwKCiMgRGF0YWJhc2UgJiBmaWxlIHNlbnNpdGlmCiouZGIKKi5zcWxpdGUKKi5zcWxpdGUzCiouZGItc2htCiouZGItd2FsCiouc2VjcmV0CioucGVtCmNvb2tpZXMudHh0CioudG1wCg==
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node modules
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary and Scratch Directories
+scratch/
+.tempmediaStorage/
+.system_generated/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Database & file sensitif
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+*.secret
+*.pem
+cookies.txt
+*.tmp
+
+# Keamanan (ditambah perapihan)
+client_secret*.json
